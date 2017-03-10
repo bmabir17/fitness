@@ -15,3 +15,12 @@ Router.route('/activeMember',function () {
 Router.route('/inactiveMember',function () {
 	this.render('inactiveMember');
 });
+Router.route('/payment',function () {
+	this.render('payment');
+});
+Router.route('/routine',function () {
+	this.render('routine');
+});
+Router.route('/editMember',function(){
+	this.render('editMember');
+});

@@ -1,0 +1,50 @@
+<template name="newMember">
+  <h1 class="center">New Member Registration</h1>
+  {{> newRegForm}}
+</template>
+<template name="activeMember">
+  <h1>Active Member</h1>
+  <div class="container-fluid"> <!-- for bootStrap div-row use -->
+    <div class="col-md-10">
+  		<div class="row">
+        <h3>List of Members</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Member's Name</th>
+                <th>Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each activeList}}                    <!-- For each member in active list -->
+                <tr>
+                  <td class= "member {{selectedClass}}">{{memName}}</td>
+                  <td class= "member {{selectedClass}}">{{memAddress}}</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+  		<div class="row">
+  			
+  		</div>
+    </div>
+    <div class="col-md-2">
+    	<div class="row">Edit Members</div>
+    	<div class="row">
+        <a href="/editMember" class="btn btn-default editMember" role="button">Edit Member's Information</a>
+    	</div>
+    </div>
+  </div>
+</template>
+<template name="inactiveMember">
+  <h1>In-Acitve Member</h1>
+</template>
+<template name="editMember">
+  <h1>Edit Member's info</h1>
+  {{#each getMember}}
+    {{memName}} : {{memAddress}}
+  {{/each}}
+</template>

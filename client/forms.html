@@ -1,0 +1,139 @@
+<template name="newRegForm">
+	<form class="form-horizontal">
+		<hr>
+		<h3>Member's Basic Information</h3>
+	  	<div class="form-group">
+	  		<label for="memberName" class="col-sm-3 control-label">Mermber's Name *</label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" id ="memberName" placeholder="Salina Aktar">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="memberAddress" class="col-sm-3 control-label">Member's Home Address *</label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" id ="memberAddress" placeholder="56, Dhanmondi, Road No 8/A">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="memberBirthDate" class="col-sm-3 control-label">Member's Birth Date *</label>
+	  		<div class="col-sm-9">
+	  			<input type="date" class=" form-control" id ="memberBirthDate" >
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="occupation" class="col-sm-3 control-label">Member's Occupation</label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" id ="occupation" placeholder="Business, Bank, houseWife">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="mobileNo" class="col-sm-3 control-label">Member's Mobile No *</label>
+	  		<div class="col-sm-9">
+	  			<input type="tel" class=" form-control" id ="mobileNo" placeholder="017x-xxxx-xxx">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="memberEmail" class="col-sm-3 control-label">Email Address </label>
+	  		<div class="col-sm-9">
+	  			<input type="email" class=" form-control" id ="memberEmail" placeholder="youradress@gmail.com">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="emergencyName" class="col-sm-3 control-label">Emergency Contact Name *</label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" id ="emergencyName" placeholder="Emran Tonmoy">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="emergencyMobileNo" class="col-sm-3 control-label">Emergency Mobile No *</label>
+	  		<div class="col-sm-9">
+	  			<input type="tel" class=" form-control" id ="emergencyMobileNo" placeholder="017x-xxxx-xxx">
+	  		</div>
+	  	</div>
+	  	<br>
+	  	<hr>
+	  	<h3>Package Selection</h3>
+	  	<div class="radio">
+	  		<label>
+	  			<input type="radio" name="admissionType" id="regularPackage" value="regular" checked>
+	  			Regular Addmission(Monthly)
+	  		</label>
+	  		<label>
+	  			<input type="radio" name="admissionType" id="devotedPackage" value="devoted" >
+	  			Membership-Devoted(6 Months)
+	  		</label>
+	  		<label>
+	  			<input type="radio" name="admissionType" id="dedicatedPackage"  value="dedicated" >
+	  			Membership-Dedicated(12 Months)
+	  		</label>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="memberStartDate" class="col-sm-3 control-label">Start Date *</label>
+	  		<div class="col-sm-9">
+	  			<input type="date" class=" form-control" id ="memberStartDate" >
+	  		</div>
+	  	</div>
+	  	<h3>Class Time Selection</h3>
+	  	<div class="col-sm-2">
+	  	</div>
+	  	<div class="col-sm-10">
+		  	<div class="checkbox">
+		  		<label>
+	      			<input type="checkbox" value="sat"> Saterday
+	    		</label>
+	    		<label>
+	      			<input type="checkbox" value="sun"> Sunday
+	    		</label>
+	    		<label>
+	      			<input type="checkbox" value="mon"> Monday
+	    		</label>
+	    		<label>
+	      			<input type="checkbox" value="tue"> Tuesday
+	    		</label>
+	    		<label>
+	      			<input type="checkbox" value="wed"> Wednesday
+	    		</label>
+	    		<label>
+	      			<input type="checkbox" value="thurs"> Thursday
+	    		</label>
+	    		
+	  		</div>
+	  		<div class="radio">
+	  			<div class="row">
+			  		<label>
+			  			<input type="radio" name="timeSelection" id="Batch1" value="batch1" checked>
+			  			10:00 AM to 11:00 AM (Morning) Batch1
+			  		</label>
+		  		</div>
+		  		<div class="row">
+			  		<label>
+			  			<input type="radio" name="timeSelection" id="Batch2" value="batch2" >
+			  			11:00 AM to 12:00 AM (Morning) Batch2
+			  		</label>
+		  		</div>
+		  		<div class="row">
+			  		<label>
+			  			<input type="radio" name="timeSelection" id="Batch3" value="batch3" >
+			  			5:00 PM to 6:00 PM  (Evening) Batch3
+			  		</label>
+		  		</div>
+		  		<div class="row">
+			  		<label>
+			  			<input type="radio" name="timeSelection" id="Batch4" value="batch4" >
+			  			6:00 PM to 7:00 PM  (Evening) Batch4
+			  		</label>
+		  		</div>
+		  	</div>
+		</div>
+	  	<div class="row">
+		  	<div class="col-sm-9">
+		  		
+		  	</div>
+		  	<div class="col-sm-3" id="formSubmit">
+		  		<button type="submit" class="btn btn-default">Save Member's Information</button>
+		  	</div>
+	  	</div>
+	  	<br>
+  	</form>
+  	
+</template>
