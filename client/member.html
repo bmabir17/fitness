@@ -1,6 +1,9 @@
 <template name="newMember">
   <h1 class="center">New Member Registration</h1>
-  {{> newRegForm}}
+  <div class="container-fluid">
+    {{> newRegForm}}
+  </div>
+  
 </template>
 <template name="activeMember">
   <h1>Active Member</h1>
@@ -32,7 +35,7 @@
   		</div>
     </div>
     <div class="col-md-2">
-    	<div class="row">Edit Members</div>
+    	<div class="row">Edit Member: {{selectedMemberShow.memName}}</div>
     	<div class="row">
         <a href="/editMember" class="btn btn-default editMember" role="button">Edit Member's Information</a>
     	</div>

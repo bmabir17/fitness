@@ -5,49 +5,49 @@
 	  	<div class="form-group">
 	  		<label for="memberName" class="col-sm-3 control-label">Mermber's Name *</label>
 	  		<div class="col-sm-9">
-	  			<input type="text" class=" form-control" id ="memberName" placeholder="Salina Aktar">
+	  			<input type="text" class=" form-control" name ="memberName" placeholder="Salina Aktar">
 	  		</div>
 	  	</div>
 	  	<div class="form-group">
 	  		<label for="memberAddress" class="col-sm-3 control-label">Member's Home Address *</label>
 	  		<div class="col-sm-9">
-	  			<input type="text" class=" form-control" id ="memberAddress" placeholder="56, Dhanmondi, Road No 8/A">
+	  			<input type="text" class=" form-control" name ="memberAddress" placeholder="56, Dhanmondi, Road No 8/A">
 	  		</div>
 	  	</div>
 	  	<div class="form-group">
 	  		<label for="memberBirthDate" class="col-sm-3 control-label">Member's Birth Date *</label>
 	  		<div class="col-sm-9">
-	  			<input type="date" class=" form-control" id ="memberBirthDate" >
+	  			<input type="date" class=" form-control" name ="memberBirthDate" >
 	  		</div>
 	  	</div>
 	  	<div class="form-group">
 	  		<label for="occupation" class="col-sm-3 control-label">Member's Occupation</label>
 	  		<div class="col-sm-9">
-	  			<input type="text" class=" form-control" id ="occupation" placeholder="Business, Bank, houseWife">
+	  			<input type="text" class=" form-control" name ="occupation" placeholder="Business, Bank, houseWife">
 	  		</div>
 	  	</div>
 	  	<div class="form-group">
 	  		<label for="mobileNo" class="col-sm-3 control-label">Member's Mobile No *</label>
 	  		<div class="col-sm-9">
-	  			<input type="tel" class=" form-control" id ="mobileNo" placeholder="017x-xxxx-xxx">
+	  			<input type="tel" class=" form-control" name ="mobileNo" placeholder="017x-xxxx-xxx">
 	  		</div>
 	  	</div>
 	  	<div class="form-group">
 	  		<label for="memberEmail" class="col-sm-3 control-label">Email Address </label>
 	  		<div class="col-sm-9">
-	  			<input type="email" class=" form-control" id ="memberEmail" placeholder="youradress@gmail.com">
+	  			<input type="email" class=" form-control" name ="memberEmail" placeholder="youradress@gmail.com">
 	  		</div>
 	  	</div>
 	  	<div class="form-group">
 	  		<label for="emergencyName" class="col-sm-3 control-label">Emergency Contact Name *</label>
 	  		<div class="col-sm-9">
-	  			<input type="text" class=" form-control" id ="emergencyName" placeholder="Emran Tonmoy">
+	  			<input type="text" class=" form-control" name ="emergencyName" placeholder="Emran Tonmoy">
 	  		</div>
 	  	</div>
 	  	<div class="form-group">
 	  		<label for="emergencyMobileNo" class="col-sm-3 control-label">Emergency Mobile No *</label>
 	  		<div class="col-sm-9">
-	  			<input type="tel" class=" form-control" id ="emergencyMobileNo" placeholder="017x-xxxx-xxx">
+	  			<input type="tel" class=" form-control" name ="emergencyMobileNo" placeholder="017x-xxxx-xxx">
 	  		</div>
 	  	</div>
 	  	<br>
@@ -79,22 +79,22 @@
 	  	<div class="col-sm-10">
 		  	<div class="checkbox">
 		  		<label>
-	      			<input type="checkbox" value="sat"> Saterday
+	      			<input name="classDay" id="sat" type="checkbox" value="sat"> Saterday
 	    		</label>
 	    		<label>
-	      			<input type="checkbox" value="sun"> Sunday
+	      			<input name="classDay" id="sun" type="checkbox" value="sun"> Sunday
 	    		</label>
 	    		<label>
-	      			<input type="checkbox" value="mon"> Monday
+	      			<input name="classDay" id="mon" type="checkbox" value="mon"> Monday
 	    		</label>
 	    		<label>
-	      			<input type="checkbox" value="tue"> Tuesday
+	      			<input name="classDay" id="tue" type="checkbox" value="tue"> Tuesday
 	    		</label>
 	    		<label>
-	      			<input type="checkbox" value="wed"> Wednesday
+	      			<input name="classDay" id="wed" type="checkbox" value="wed"> Wednesday
 	    		</label>
 	    		<label>
-	      			<input type="checkbox" value="thurs"> Thursday
+	      			<input name="classDay" id="thurs" type="checkbox" value="thurs"> Thursday
 	    		</label>
 	    		
 	  		</div>
@@ -127,13 +127,27 @@
 		</div>
 	  	<div class="row">
 		  	<div class="col-sm-9">
-		  		
+		  		{{#if formSuccess}}
+		  			{{formSubmitSuccess}}
+		  		{{/if}}
 		  	</div>
 		  	<div class="col-sm-3" id="formSubmit">
-		  		<button type="submit" class="btn btn-default">Save Member's Information</button>
+		  		
+		  			<button href="/submitSuccess" type="submit" class="btn btn-default">Save Member's Information</button>
+		  		
 		  	</div>
 	  	</div>
 	  	<br>
   	</form>
   	
+</template>
+
+<template name="formSubmitSuccess">
+	<div class="row">
+		
+	</div>
+	<div class="row">
+		<h1 id="formSubmit">Form Submitted Successfully</h1>
+	</div>
+	
 </template>

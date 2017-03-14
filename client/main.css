@@ -15,3 +15,6 @@ h2 {
 .selected{
 	background-color: lightgrey;
 }
+#formSubmit{
+	text-align: center;
+}

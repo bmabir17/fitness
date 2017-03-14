@@ -21,6 +21,10 @@ Router.route('/payment',function () {
 Router.route('/routine',function () {
 	this.render('routine');
 });
+
 Router.route('/editMember',function(){
 	this.render('editMember');
+});
+Router.route('/submitSuccess',function(){
+	this.render('formSubmitSuccess');
 });
