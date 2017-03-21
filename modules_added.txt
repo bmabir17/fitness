@@ -1,3 +1,5 @@
 meteor add twbs:bootstrap
 meteor add iron:router
 meteor add matb33:bootstrap-collapse-js
+meteor add session
+meteor add meteorhacks:search-source
