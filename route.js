@@ -28,3 +28,6 @@ Router.route('/editMember',function(){
 Router.route('/submitSuccess',function(){
 	this.render('formSubmitSuccess');
 });
+Router.route('/AddRoutine', function(){
+	this.render('addroutine');
+});
