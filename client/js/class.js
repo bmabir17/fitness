@@ -1,5 +1,7 @@
 //import '/client/class.html';
 ClassList= new Mongo.Collection('Classes');
+SubjectList =new Mongo.Collection('subjects');
+PeriodList=new Mongo.Collection('periods');
 Template.classView.helpers({
 	classList : function() {
 		console.log(ClassList.find().fetch());
@@ -32,5 +34,14 @@ Template.addroutine.helpers({
 		var editClassId = Session.get('selectClass');
 		console.log(editClassId);
 		return ClassList.find(editClassId);
-	}
+	},
+	getMember: function(){
+		return MemberList.find();
+	},
+	getPeriod: function(){
+		return PeriodList.find();
+	},
+	getSubject: function(){
+		return SubjectList.find();
+	},
 });

@@ -1,0 +1,86 @@
+<template  name="classView">
+	<div class="container-fluid">
+		<div class="col-md-10 col-xs-10">
+			<div class="row">
+				<h3>List of Classes</h3>
+				<div class="table-responsive">
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr>
+								<th>Class Name</th>
+								<th>Status</th>
+							</tr>		
+						</thead>
+						<tbody>
+							{{#each classList}}
+							<tr>
+								<td class="class {{selectedClass}}">{{className}}</td>
+								<td class="class {{selectedClass}}">{{routineFlag}}</td>
+								
+							</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>
+				
+			</div>		
+		</div>
+		<div class="col-md-2 col-xs-2">
+		<h1>Schedule Routine</h1>
+		{{#each getClass}}
+			{{className}}:{{routineFlag}}
+		{{/each}}
+
+		<a href="/AddRoutine"  class="btn btn-primary" role="button">Add Routine
+		</a> 
+		</div>
+		
+	</div>
+	
+</template>
+<template name="addroutine">
+{{#each getClass}}
+{{className}}:{{routineFlag}}
+{{/each}}
+
+	<h1>Now Update your class routine </h1>
+<form>
+	<div class="row">
+		<div class="form-group col-md-4">
+			<label>Select Member</label>
+			<select multiple class="form-control form-control-routine" >
+				{{#each getMember}}
+				<option>{{memName}}</option>
+				{{/each}}
+			</select>
+		</div>
+		<div class="form-group col-md-4">
+			<label>Select Period</label>
+			<select multiple class="form-control form-control-routine" >
+			{{#each getPeriod}}
+				<option>{{periodName}}- Start:{{startTime}} End:{{endTime}}</option>
+			{{/each}}
+			</select>
+		</div>
+		<div class="form-group col-md-4">
+			<label>Select Subject</label>
+			<select multiple class="form-control form-control-routine" >
+			{{#each getSubject}}
+				<option>{{subjectName}}- {{module}}</option>
+			{{/each}}
+			</select>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-2">
+			<button class="btn btn-success">
+				Save Routine
+			</button>
+			
+		</div>
+		
+	</div>
+</form>
+
+</template>
