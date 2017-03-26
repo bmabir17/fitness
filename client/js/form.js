@@ -1,3 +1,4 @@
+
 Template.newRegForm.events({
 	'submit form' : function(event){		//using submit form event as it enables the user to submit the form by pressing the return key as well as the submit 
 		event.preventDefault();				//Prevents the browser to refresh as the event type is form submit
@@ -48,8 +49,8 @@ Template.newRegForm.events({
 		event.target.admissionType.value="";
 		event.target.memberStartDate.value="";
 		Session.set('formSuccess',true);
-		Metero.defer(function(){
-			Router.go('formSubmitSuccess');
+		Meteor.defer(function(){
+			Router.go('submitSuccess');
 		});
 		
 	},
@@ -63,5 +64,81 @@ Template.newRegForm.helpers({
 	}
 });
 Template.newRegForm.onCreated(function newRegFormOnCreated(){
+	
+});
+Template.newClassForm.events({
+	'submit form' : function(event){		//using submit form event as it enables the user to submit the form by pressing the return key as well as the submit 
+		event.preventDefault();				//Prevents the browser to refresh as the event type is form submit
+		console.log("Form submit");
+		console.log(event.target.className.value);
+		console.log(event.target.status.value);
+
+		var classNameVar=event.target.className.value;
+		var statusVar=event.target.status.value;
+		ClassList.insert({
+			className : classNameVar,
+			routineFlag : statusVar,
+			
+		});
+		event.target.className.value="";
+		event.target.status.value="";
+		
+		Session.set('formSuccess',true);
+		Meteor.defer(function(){
+			Router.go('submitSuccess');
+		});
+		
+	},
+	
+});
+Template.newSubjectForm.events({
+	'submit form' : function(event){		//using submit form event as it enables the user to submit the form by pressing the return key as well as the submit 
+		event.preventDefault();				//Prevents the browser to refresh as the event type is form submit
+		console.log("Form submit");
+		console.log(event.target.subjectName.value);
+		console.log(event.target.moduleName.value);
+
+		var subjectNameVar=event.target.subjectName.value;
+		var moduleVar=event.target.moduleName.value;
+		SubjectList.insert({
+			subjectName : subjectNameVar,
+			module : moduleVar,
+			
+		});
+		event.target.subjectName.value="";
+		event.target.moduleName.value="";
+		
+		Session.set('formSuccess',true);
+		Meteor.defer(function(){
+			Router.go('submitSuccess');
+		});
+		
+	},
+	
+});
+Template.newPeriodForm.events({
+	'submit form' : function(event){		//using submit form event as it enables the user to submit the form by pressing the return key as well as the submit 
+		event.preventDefault();				//Prevents the browser to refresh as the event type is form submit
+		console.log("Form submit");
+		console.log(event.target.subjectName.value);
+		console.log(event.target.moduleName.value);
+
+		var subjectNameVar=event.target.subjectName.value;
+		var moduleVar=event.target.moduleName.value;
+		var endTimeVar=event.target.endTime.value;
+		PeriodList.insert({
+			periodName : subjectNameVar,
+			startTime : moduleVar,
+			endTime :endTimeVar,
+		});
+		event.target.subjectName.value="";
+		event.target.moduleName.value="";
+		
+		Session.set('formSuccess',true);
+		Meteor.defer(function(){
+			Router.go('submitSuccess');
+		});
+		
+	},
 	
 });

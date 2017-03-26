@@ -1,0 +1,218 @@
+<template name="routineTemplate">
+	
+	<table  border="1" style="color:white; border-collapse: collapse; text-align: center;position: absolute;top-margin: 40%;margin-left: 10%;margin-right: 10% " >
+		<caption style="text-align: left;"><h3>CLASS ROUTINE:</h3></caption>
+		<div >
+			<tr class="classroutine ">
+				<th class="row1" rowspan="1" colspan="1">Time</th>
+				{{#each getPeriod}}
+				<th class="row1" rowspan="1" colspan="1">{{periodName}}</th>
+				{{/each}}
+				<th  rowspan="2" colspan="1"> Breakk</th>
+
+			</tr>
+			<tr class="class">
+				<th rowspan="1" colspan="1">Day</th>
+				{{#each getPeriod}}
+				<th rowspan="1" colspan="1">{{startTime}}-{{endTime}}</th>
+				{{/each}}
+
+					<!--
+					<th rowspan="1" colspan="1">10:35-11:20 </th>
+					<th rowspan="1" colspan="1">11:20-12:05 </th>
+					<th rowspan="1" colspan="1">12:05-12:50 </th>
+					<th rowspan="1" colspan="1">12:50-1:35</th>
+					<th rowspan="1" colspan="1">1:35-2:20
+					</th> -->
+				</tr>
+				<tr class="class">
+					<th rowspan="4" colspan="1">Saturday</th>
+					{{#each  getClassRoutine "Saturday"}}
+					<th rowspan="2" colspan="1">{{subject_name}}</th>
+					{{/each}}
+					
+					<!--
+					<th rowspan="2" colspan="1">Mathematics</th>
+					<th rowspan="20" colspan="1"></th>
+					<th rowspan="2" colspan="1">Biology</th>
+					<th rowspan="2" colspan="1">Social Science</th>
+					<th rowspan="2" colspan="1">Sports</th>
+					<th rowspan="2" colspan="1"></th>
+					<th rowspan="2" colspan="1"></th>
+				-->
+
+			</tr>
+			<tr></tr>
+			<tr class="class">
+				{{#each  getClassRoutine "Saturday"}}
+				<th rowspan="2" colspan="1">{{member_name}}</th>
+				{{/each}}
+
+					<!--
+					<th rowspan="2" colspan="1">SabbirRahman</th>
+					<th rowspan="2" colspan="1">Neera</th>
+					<th rowspan="2" colspan="1">Musfiq </th>
+					<th rowspan="2" colspan="1">Miraz</th>
+					<th rowspan="2" colspan="1"></th>
+					<th rowspan="2" colspan="1"></th>
+				-->
+
+			</tr>
+			<tr></tr>
+			<tr class="class">
+				<th rowspan="4" colspan="1">Sunday</th>
+					{{#each  getClassRoutine "Sunday"}}
+					<th rowspan="2" colspan="1">{{subject_name}}</th>
+					{{/each}}
+					<!--
+					<th rowspan="2" colspan="1">Bangla</th>
+					<th rowspan="2" colspan="1">English</th>
+					<th rowspan="2" colspan="1">Mathematics</th>
+				
+					<th rowspan="2" colspan="1">Biology</th>
+					<th rowspan="2" colspan="1">Social Science</th>
+					<th rowspan="2" colspan="1">Sports</th>
+					<th rowspan="2" colspan="1"></th>
+					<th rowspan="2" colspan="1"></th>
+				-->
+			</tr>
+
+			<tr></tr>
+
+			<tr class="class">
+				{{#each  getClassRoutine "Sunday"}}
+				<th rowspan="2" colspan="1">{{member_name}}</th>
+				{{/each}}
+			<!--
+				<th rowspan="2" colspan="1">Rahim Uddin </th>
+				<th rowspan="2" colspan="1">Sakib Al Hasan</th>
+				<th rowspan="2" colspan="1">Sabbir Rahman</th>
+
+				<th rowspan="2" colspan="1">Neera</th>
+				<th rowspan="2" colspan="1">Musfiq </th>
+				<th rowspan="2" colspan="1">Miraz</th>
+				<th rowspan="2" colspan="1"></th>
+				<th rowspan="2" colspan="1"></th>
+				-->
+			</tr>
+
+			<tr></tr>
+
+			<tr class="class">
+				<th rowspan="4" colspan="1">Monday</th>
+				{{#each  getClassRoutine "Monday"}}
+					<th rowspan="2" colspan="1">{{subject_name}}</th>
+				{{/each}}
+				<!--
+				<th rowspan="2" colspan="1">Bangla</th>
+				<th rowspan="2" colspan="1">English</th>
+				<th rowspan="2" colspan="1">Mathematics</th>
+
+				<th rowspan="2" colspan="1">Biology</th>
+				<th rowspan="2" colspan="1">Social Science</th>
+				<th rowspan="2" colspan="1">Sports</th>
+				<th rowspan="2" colspan="1"></th>
+				<th rowspan="2" colspan="1"></th>
+				-->
+			</tr>
+
+			<tr></tr>
+
+			<tr class="class">
+				{{#each  getClassRoutine "Monday"}}
+				<th rowspan="2" colspan="1">{{member_name}}</th>
+				{{/each}}
+				<!--
+				<th rowspan="2" colspan="1">Rahim Uddin </th>
+				<th rowspan="2" colspan="1">Sakib Al Hasan</th>
+				<th rowspan="2" colspan="1">Sabbir Rahman</th>
+
+				<th rowspan="2" colspan="1">Neera</th>
+				<th rowspan="2" colspan="1">Musfiq </th>
+				<th rowspan="2" colspan="1">Miraz
+				</th>
+				<th rowspan="2" colspan="1"></th>
+				<th rowspan="2" colspan="1"></th>
+				-->
+				</tr>
+				<tr></tr>
+				<tr class="class">
+					<th rowspan="4" colspan="1">Tuesday</th>
+					{{#each  getClassRoutine "Tuesday"}}
+					<th rowspan="2" colspan="1">{{subject_name}}</th>
+					{{/each}}
+					<!--
+					<th rowspan="2" colspan="1">Bangla</th>
+					<th rowspan="2" colspan="1">English</th>
+					<th rowspan="2" colspan="1">Mathematics</th>
+
+					<th rowspan="2" colspan="1">Biology</th>
+					<th rowspan="2" colspan="1">Social Science</th>
+					<th rowspan="2" colspan="1">Sports</th>
+					<th rowspan="2" colspan="1"></th>
+					<th rowspan="2" colspan="1"></th>
+					-->
+
+				</tr>
+				<tr></tr>
+				<tr class="class">
+					{{#each  getClassRoutine "Tuesday"}}
+					<th rowspan="2" colspan="1">{{member_name}}</th>
+					{{/each}}
+					<!--
+					<th rowspan="2" colspan="1">Rahim Uddin </th>
+					<th rowspan="2" colspan="1">Sakib Al Hasan</th>
+					<th rowspan="2" colspan="1">Sabbir
+						Rahman</th>
+
+						<th rowspan="2" colspan="1">Neera</th>
+						<th rowspan="2" colspan="1">Musfiq </th>
+						<th rowspan="2" colspan="1">Miraz
+						</th>
+						<th rowspan="2" colspan="1"></th>
+						<th rowspan="2" colspan="1"></th>
+					-->
+					</tr>
+					<tr></tr>
+					<tr class="class">
+
+						<th rowspan="4" colspan="1">Wednesday</th>
+						{{#each  getClassRoutine "Wednesday"}}
+						<th rowspan="2" colspan="1">{{subject_name}}</th>
+						{{/each}}
+						<!--
+						<th rowspan="2" colspan="1">Bangla</th>
+						<th rowspan="2" colspan="1">English</th>
+						<th rowspan="2" colspan="1">Mathematics</th>
+
+						<th rowspan="2" colspan="1">Biology</th>
+						<th rowspan="2" colspan="1">Social Science</th>
+						<th rowspan="2" colspan="1">Sports</th>
+						<th rowspan="2" colspan="1"></th>
+						<th rowspan="2" colspan="1"></th>
+						-->
+
+					</tr>
+					<tr></tr>
+					<tr class="class" >
+						{{#each  getClassRoutine "Wednesday"}}
+						<th rowspan="2" colspan="1">{{member_name}}</th>
+						{{/each}}
+						<!--
+						<th rowspan="2" colspan="1">Rahim Uddin </th>
+						<th rowspan="2" colspan="1">Sakib Al Hasan</th>
+						<th rowspan="2" colspan="1">Sabbir
+							Rahman</th>
+
+							<th rowspan="2" colspan="1">Neera</th>
+							<th rowspan="2" colspan="1">Musfiq </th>
+							<th rowspan="2" colspan="1">Miraz
+							</th>
+							<th rowspan="2" colspan="1"></th>
+							<th rowspan="2" colspan="1"></th>
+						-->
+						</tr>
+					</div>
+				</table>
+
+			</template>

@@ -33,54 +33,88 @@
 
 		<a href="/AddRoutine"  class="btn btn-primary" role="button">Add Routine
 		</a> 
+		<a href="/AddClass"  class="btn btn-info" role="button">Add Class
+		</a> 
+		<a href="/AddSubject"  class="btn btn-warning" role="button">Add Subject
+		</a> 
+		<a href="/AddPeriod"  class="btn btn-danger" role="button">Add Period
+		</a> 
 		</div>
 		
 	</div>
 	
 </template>
 <template name="addroutine">
-{{#each getClass}}
-{{className}}:{{routineFlag}}
-{{/each}}
 
-	<h1>Now Update your class routine </h1>
+
+	
 <form>
-	<div class="row">
-		<div class="form-group col-md-4">
-			<label>Select Member</label>
-			<select multiple class="form-control form-control-routine" >
+	<div class="col-md-4">
+		<h1>Now Update your class routine </h1>
+		{{#each getClass}}
+		{{className}}:{{routineFlag}}
+		
+		{{/each}}
+		<div class="form-group row">
+			<label for="member">Select Member</label>
+			<select  class="form-control form-control-routine" name="member">
 				{{#each getMember}}
-				<option>{{memName}}</option>
+				<option value={{memName}}>{{memName}}</option>
 				{{/each}}
 			</select>
 		</div>
-		<div class="form-group col-md-4">
-			<label>Select Period</label>
-			<select multiple class="form-control form-control-routine" >
+		<div class="form-group row">
+			<label for ="period">Select Period</label>
+			<select  class="form-control form-control-routine" name="period">
 			{{#each getPeriod}}
-				<option>{{periodName}}- Start:{{startTime}} End:{{endTime}}</option>
+				<option value={{periodName}}>{{periodName}}- Start:{{startTime}} End:{{endTime}}</option>
 			{{/each}}
 			</select>
 		</div>
-		<div class="form-group col-md-4">
-			<label>Select Subject</label>
-			<select multiple class="form-control form-control-routine" >
+		<div class="form-group row">
+			<label for="subject">Select Subject</label>
+			<select  class="form-control form-control-routine" name="subject">
 			{{#each getSubject}}
-				<option>{{subjectName}}- {{module}}</option>
+				<option value={{subjectName}}>{{subjectName}}- {{module}}</option>
 			{{/each}}
 			</select>
+		</div>
+		<div class="form-group row">
+			<label for="day">Select Day</label>
+			<select  class="form-control form-control-routine" name="day">
+			<option value="Saturday">Saturday</option>
+			<option value="Sunday">Sunday</option>
+			<option value="Monday">Monday</option>
+			<option value="Tuesday">Tuesday</option>
+			<option value="Wednesday">Wednesday</option>
+			</select>
+		</div>
+		<div class="row">
+			<button class="btn btn-success">
+				Add Period to Class 
+			</button>
+		</div>
+		<div class="row">
+			{{#if getTeacherError}}
+				<h3>Teacher is Busy</h3>
+			{{else}}
+				<h3>Teacher is fine :D</h3>
+			{{/if}}
 		</div>
 	</div>
-	
-	<div class="row">
-		<div class="col-md-2">
-			<button class="btn btn-success">
-				Save Routine
-			</button>
-			
-		</div>
-		
+	<div class="col-md-8">
+		{{> routineTemplate}}
 	</div>
 </form>
+	
 
+</template>
+<template name="addClass">
+	{{>newClassForm}}
+</template>
+<template name="addSubject">
+	{{> newSubjectForm}}
+</template>
+<template name="addPeriod">
+	{{> newPeriodForm}}
 </template>

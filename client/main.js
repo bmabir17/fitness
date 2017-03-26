@@ -22,9 +22,11 @@ Template.hello.events({
   },
 });
 
-MemberList= new Mongo.Collection('members'); //Downloads the dataBase from the server and save it as a local database
-
-
+MemberList= new Mongo.Collection('members'); //Creates a new Database
+SubjectList =new Mongo.Collection('subjects');
+ClassList= new Mongo.Collection('classes');
+PeriodList=new Mongo.Collection('periods');
+RoutineList=new Mongo.Collection('routines');
 Template.recentMember.helpers({
 	recentList : function(){
 		return MemberList.find(); //Return all the member list by sorted by order of join time

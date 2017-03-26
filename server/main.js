@@ -6,6 +6,7 @@ Meteor.startup(() => {
 if(Meteor.isServer){
 	MemberList= new Mongo.Collection('members'); //Creates a new Database
 	SubjectList =new Mongo.Collection('subjects');
-	ClassList= new Mongo.Collection('Classes');
+	ClassList= new Mongo.Collection('classes');
 	PeriodList=new Mongo.Collection('periods');
+	RoutineList=new Mongo.Collection('routines');
 }

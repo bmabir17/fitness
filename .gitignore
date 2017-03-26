@@ -40,3 +40,4 @@ jspm_packages
 .meteor
 .meteor/local
 settings.json
+.deploy
