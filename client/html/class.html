@@ -2,19 +2,24 @@
 	<div class="container-fluid">
 		<div class="col-md-10 col-xs-10">
 			<div class="row">
-				<h3>List of Classes</h3>
+				<h3>List of Activity</h3>
 				<div class="table-responsive">
 					<table class="table table-striped table-hover">
 						<thead>
 							<tr>
-								<th>Class Name</th>
+								<th>Activity Name</th>
+								<th>Seat Limit</th>
+								<th>Activity Type</th>
 								<th>Status</th>
+
 							</tr>		
 						</thead>
 						<tbody>
 							{{#each classList}}
-							<tr>
+							<tr title="Click to select a Class">
 								<td class="class {{selectedClass}}">{{className}}</td>
+								<td class="class {{selectedClass}}">{{activitySeat}}</td>
+								<td class="class {{selectedClass}}">{{activityType}}</td>
 								<td class="class {{selectedClass}}">{{routineFlag}}</td>
 								
 							</tr>
@@ -31,40 +36,31 @@
 			{{className}}:{{routineFlag}}
 		{{/each}}
 
-		<a href="/AddRoutine"  class="btn btn-primary" role="button">Add Routine
+		<a class="btn btn-primary btn-active makeroutineBtn" role="button">Make New Routine
 		</a> 
-		<a href="/AddClass"  class="btn btn-info" role="button">Add Class
+		<a href="/AddClass"  class="btn btn-info btn-active" role="button">Make GYM Acitvity
 		</a> 
-		<a href="/AddSubject"  class="btn btn-warning" role="button">Add Subject
+		<a href="/AddInstructor"  class="btn btn-warning btn-active" role="button">Add Instructor
 		</a> 
-		<a href="/AddPeriod"  class="btn btn-danger" role="button">Add Period
+		<a href="/AddPeriod"  class="btn btn-danger btn-active" role="button">Make Class Period
 		</a> 
 		</div>
 		
 	</div>
 	
 </template>
-<template name="addroutine">
-
-
+<template name="makeroutine">
 	
 <form>
-	<div class="col-md-4">
+	<div class="col-md-3">
 		<h1>Now Update your class routine </h1>
 		{{#each getClass}}
 		{{className}}:{{routineFlag}}
 		
 		{{/each}}
+		
 		<div class="form-group row">
-			<label for="member">Select Member</label>
-			<select  class="form-control form-control-routine" name="member">
-				{{#each getMember}}
-				<option value={{memName}}>{{memName}}</option>
-				{{/each}}
-			</select>
-		</div>
-		<div class="form-group row">
-			<label for ="period">Select Period</label>
+			<label for ="period">Select Class Periods</label>
 			<select  class="form-control form-control-routine" name="period">
 			{{#each getPeriod}}
 				<option value={{periodName}}>{{periodName}}- Start:{{startTime}} End:{{endTime}}</option>
@@ -72,10 +68,10 @@
 			</select>
 		</div>
 		<div class="form-group row">
-			<label for="subject">Select Subject</label>
-			<select  class="form-control form-control-routine" name="subject">
-			{{#each getSubject}}
-				<option value={{subjectName}}>{{subjectName}}- {{module}}</option>
+			<label for="instructor">Select Instructor</label>
+			<select  class="form-control form-control-routine" name="instructor">
+			{{#each getInstructor}}
+				<option value={{subjectName}}>{{instructorName}}- {{instructorPhone}}</option>
 			{{/each}}
 			</select>
 		</div>
@@ -87,34 +83,59 @@
 			<option value="Monday">Monday</option>
 			<option value="Tuesday">Tuesday</option>
 			<option value="Wednesday">Wednesday</option>
+			<option value="Thursday">Thursday</option>
 			</select>
 		</div>
 		<div class="row">
-			<button class="btn btn-success">
+			<button class="btn btn-primary">
 				Add Period to Class 
 			</button>
 		</div>
 		<div class="row">
-			{{#if getTeacherError}}
-				<h3>Teacher is Busy</h3>
-			{{else}}
-				<h3>Teacher is fine :D</h3>
-			{{/if}}
+			<a href="/routine" class="btn btn-success saveRoutine" role="button"> Save Activity Routine</a>
 		</div>
 	</div>
-	<div class="col-md-8">
+</form>
+	<div class="col-md-9">
 		{{> routineTemplate}}
 	</div>
-</form>
 	
 
 </template>
 <template name="addClass">
-	{{>newClassForm}}
+	<div class="container">
+		<div class="col-md-4">
+			{{>newClassForm}}
+		</div>
+		<div class="col-md-6">
+			<table class="table table-stripped table-hover">
+				<thead>
+					<tr>
+						<th>Acitivity Name</th>
+						<th>Acitivity Type</th>
+						<th>Acitivity Seat</th>
+						<th>Acitivity Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each classList}}
+						<tr>
+							<td title="Click to select a Class" class="class {{selectedClass}}">{{className}}</td>
+							<td title="Click to select a Class" class="class {{selectedClass}}">{{activityType}}</td>
+							<td title="Click to select a Class" class="class {{selectedClass}}">{{activitySeat}}</td>
+							<td title="Click to select a Class" class="class {{selectedClass}}">{{routineFlag}}</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-2">
+			<h3>{{selectedClassShow.className}}</h3>
+			<a href="/AddClass" class="btn btn-danger btn-active deleteClass">Delete Activity</a>
+		</div>
+	</div>
 </template>
-<template name="addSubject">
-	{{> newSubjectForm}}
-</template>
+
 <template name="addPeriod">
 	{{> newPeriodForm}}
 </template>

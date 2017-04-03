@@ -22,8 +22,8 @@
             <tbody>
               {{#each activeList}}                    <!-- For each member in active list -->
                 <tr>
-                  <td class= "member {{selectedClass}}">{{memName}}</td>
-                  <td class= "member {{selectedClass}}">{{memAddress}}</td>
+                  <td title="Click to select a member" class= "member {{selectedMember}}">{{memName}}</td>
+                  <td title="Click to select a member" class= "member {{selectedMember}}">{{memAddress}}</td>
                 </tr>
               {{/each}}
             </tbody>
@@ -39,7 +39,7 @@
       <h3>{{selectedMemberShow.memName}}</h3> </div>
     	<div class="row">
         <a href="/editMember" class="btn btn-info btn-active editMember" role="button">Edit Information</a>
-        <a href="/editMember" class="btn btn-primary btn-active editMember" role="button">Edit Class Routine</a>
+        <a href="/AddRoutine" class="btn btn-primary btn-active addRoutine" role="button">Edit Class Routine</a>
         <a href="/editMember" class="btn btn-success btn-active editMember" role="button">Payment </a>
         <a href="/activeMember" class="btn btn-danger btn-active deleteMember">Delete Member</a>
     	</div>
@@ -54,4 +54,23 @@
   {{#each getMember}}
     {{memName}} : {{memAddress}}
   {{/each}}
+</template>
+
+<template name="memberRoutineSelect">
+  
+  {{#each getMember}}
+    {{memName}}-{{memMobile}}
+  {{/each}}
+  
+  <form>
+    <label for="activity">Select an Activity</label>
+    <select class="form-control" name="activity">
+      {{#each getActivity}}
+      <option value={{className}}>
+        {{className}}
+      </option>
+      {{/each}}
+    </select>
+  </form>
+  
 </template>

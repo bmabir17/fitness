@@ -1,0 +1,29 @@
+<template name="addInstructor">
+	<div class="col-md-6">
+	{{> newInstructorForm}}
+	</div>
+	<div class="col-md-4">
+		<table class="table table-stripped table-hover">
+			<thead>
+				<tr>
+					<th>Instructor's Name</th>
+					<th>Phone No.</th>
+					<th>Address</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each instructorList}}
+					<tr>
+						<td class="instructor {{selectedInstructor}}">{{instructorName}}</td>
+						<td class="instructor {{selectedInstructor}}">{{instructorAddress}}</td>
+						<td class="instructor {{selectedInstructor}}">{{instructorPhone}}</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-2">
+		<h3>{{selectedInstructorShow.instructorName}}</h3>
+		<a href="/AddInstructor" class="btn btn-danger btn-active deleteInstructor">Delete Instructor</a>
+	</div>
+</template>

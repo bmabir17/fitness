@@ -22,9 +22,9 @@ Template.hello.events({
   },
 });
 
-MemberList= new Mongo.Collection('members'); //Creates a new Database
-SubjectList =new Mongo.Collection('subjects');
-ClassList= new Mongo.Collection('classes');
+//MemberList= new Mongo.Collection('members'); //Creates a new Database
+InstructorList =new Mongo.Collection('instructors');
+
 PeriodList=new Mongo.Collection('periods');
 RoutineList=new Mongo.Collection('routines');
 Template.recentMember.helpers({
