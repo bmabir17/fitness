@@ -54,8 +54,23 @@ Template.editMember.helpers({
 	}
 
 });
+Template.memberRoutineSelect.onCreated(function(){
+	this.currentTab = new ReactiveVar("Activity");
+});
 
 Template.memberRoutineSelect.helpers({
+	tabData:function(){
+		var tab= Template.instance().currentTab.get();
+		
+		console.log(tab);
+		var routineData=RoutineList.find({class_name:tab});
+		console.log(routineData.fetch());
+		return {contentType:tab, items: routineData};
+	},
+	tab:function(){
+		return Template.instance().currentTab.get();
+	},
+	
 	getMember : function(){
 		var editMemberId = Session.get('memberId');
 		//console.log(editMemberId);
@@ -65,5 +80,18 @@ Template.memberRoutineSelect.helpers({
 	getActivity : function(){
 		//console.log( ClassList.find().fetch());
 		return ClassList.find();
-	}
+	},
+	getRoutine :function(){
+		console.log(RoutineList.find().fetch());
+		return RoutineList.find();
+	},
+	
+});
+Template.memberRoutineSelect.events({
+	'click .nav-pills li':function(event, template){
+		var currentTab= $(event.target).closest("li");
+		currentTab.addClass("active");
+		$(".nav-pills li").not(currentTab).removeClass("active");
+		template.currentTab.set(currentTab.data("template"));
+	},
 });

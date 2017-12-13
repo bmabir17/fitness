@@ -9,7 +9,7 @@
   <h1>Active Member</h1>
   <div class="container-fluid"> <!-- for bootStrap div-row use -->
     <div class="col-md-10">
-  		<div class="row">
+      <div class="row">
         <h3>List of Members</h3>
         <div class="table-responsive">
           <table class="table table-striped table-hover">
@@ -17,60 +17,84 @@
               <tr>
                 <th>Member's Name</th>
                 <th>Address</th>
+                <th>Mobile No</th>
+                <th>Admission Type</th>
+                <th>Start Date</th>
               </tr>
             </thead>
             <tbody>
               {{#each activeList}}                    <!-- For each member in active list -->
-                <tr>
-                  <td title="Click to select a member" class= "member {{selectedMember}}">{{memName}}</td>
-                  <td title="Click to select a member" class= "member {{selectedMember}}">{{memAddress}}</td>
-                </tr>
+              <tr title="Click to select a member" class= "member {{selectedMember}}">
+                <td  >{{memName}}</td>
+                <td  >{{memAddress}}</td>
+                <td  >{{memMobile}}</td>
+                <td  >{{addmission_type}}</td>
+                <td  >{{start_date}}</td>
+              </tr>
               {{/each}}
             </tbody>
           </table>
         </div>
       </div>
-  		<div class="row">
-  			
-  		</div>
+      <div class="row">
+      </div>
     </div>
     <div class="col-md-2">
     	<div class="row">Selected Member:<br>
-      <h3>{{selectedMemberShow.memName}}</h3> </div>
-    	<div class="row">
-        <a href="/editMember" class="btn btn-info btn-active editMember" role="button">Edit Information</a>
-        <a href="/AddRoutine" class="btn btn-primary btn-active addRoutine" role="button">Edit Class Routine</a>
-        <a href="/editMember" class="btn btn-success btn-active editMember" role="button">Payment </a>
-        <a href="/activeMember" class="btn btn-danger btn-active deleteMember">Delete Member</a>
-    	</div>
+        <h3>{{selectedMemberShow.memName}}</h3> </div>
+        <div class="row">
+          <a href="/editMember" class="btn btn-info btn-active editMember" role="button">Edit Information</a>
+          <a href="/AddRoutine" class="btn btn-primary btn-active addRoutine" role="button">Edit Class Routine</a>
+          <a href="/editMember" class="btn btn-success btn-active editMember" role="button">Payment </a>
+          <a href="/activeMember" class="btn btn-danger btn-active deleteMember">Delete Member</a>
+        </div>
+      </div>
     </div>
-  </div>
-</template>
-<template name="inactiveMember">
-  <h1>In-Acitve Member</h1>
-</template>
-<template name="editMember">
-  <h1>Edit Member's info</h1>
-  {{#each getMember}}
+  </template>
+  <template name="inactiveMember">
+    <h1>In-Acitve Member</h1>
+  </template>
+  <template name="editMember">
+    <h1>Edit Member's info</h1>
+    {{#each getMember}}
     {{memName}} : {{memAddress}}
-  {{/each}}
-</template>
+    {{/each}}
+  </template>
 
-<template name="memberRoutineSelect">
-  
-  {{#each getMember}}
-    {{memName}}-{{memMobile}}
-  {{/each}}
-  
-  <form>
-    <label for="activity">Select an Activity</label>
-    <select class="form-control" name="activity">
+  <template name="memberRoutineSelect">
+
+
+    <ul class="nav nav-pills" title="Click to Select Activity">
       {{#each getActivity}}
-      <option value={{className}}>
-        {{className}}
-      </option>
+      <li data-template="{{className}}" role="presentation" class="">
+        <a href="#">{{className}}</a>
+      </li>
       {{/each}}
-    </select>
-  </form>
-  
-</template>
+    </ul>
+    {{> Template.dynamic template="content" data=tabData}} <!-- Template named "content is called with a variable data source"-->
+
+
+
+<!--
+    <form>
+      <label for="activity">Select an Activity</label>
+      <select class="form-control" name="activity" id="activity">
+        {{#each getActivity}}
+        <option value={{className}} >
+          {{className}}
+        </option>
+        {{/each}}
+      </select>
+      
+      <label for="routine">Select routines</label>
+      <select class="form-control" name="routine">
+        {{#each getRoutine}}
+        <option value={{className}} >
+          {{className}}
+        </option>
+        {{/each}}
+      </select>
+    </form>
+-->
+
+  </template>

@@ -6,6 +6,10 @@ h1 {
 h2 {
     text-align: left;
 }
+h3 {
+    text-align: center;
+    color: white;
+}
 #activeListSpan {
 	padding-left: 20px;
 }
@@ -32,7 +36,7 @@ table{
 th{
 	background: #252830;
 	color:white;
-	text-decoration-color: 
+	text-decoration-color:white;
 }
 tr{
 	background: #252830;
