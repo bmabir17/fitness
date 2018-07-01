@@ -1,11 +1,12 @@
 # Fitness
 Group Fitness MIS webApp
 # Completed Features:
-1.Add new Memebers and assign them Gym Activity routines for their choosen Activity
-2.Delete members
-3.Create & Delete new Instuctors
-4.Create new Gym Acitvity and create routines for them
-5.Edit Gym Activity routines
+1. Add new Memebers and assign them Gym Activity routines for their choosen Activity
+2. Delete members
+3. Create & Delete new Instuctors
+4. Create new Gym Acitvity and create routines for them
+5. Edit Gym Activity routines
+
 # TODO
 1. Edit Member information
 2. Make payment for member
