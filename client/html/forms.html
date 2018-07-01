@@ -1,0 +1,181 @@
+<template name="newRegForm">
+
+	<form class="form-horizontal">
+		<hr>
+		<div class="col-md-6">
+		<h4>Member's Basic Information</h4>
+	  	<div class="form-group">
+	  		<label for="memberName" class="col-sm-3 control-label">Mermber's Name *</label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" name ="memberName" placeholder="Salina Aktar">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="memberAddress" class="col-sm-3 control-label">Member's Home Address *</label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" name ="memberAddress" placeholder="56, Dhanmondi, Road No 8/A">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="memberBirthDate" class="col-sm-3 control-label">Member's Birth Date *</label>
+	  		<div class="col-sm-9">
+	  			<input type="date" class=" form-control" name ="memberBirthDate" >
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="occupation" class="col-sm-3 control-label">Member's Occupation</label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" name ="occupation" placeholder="Business, Bank, houseWife">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="mobileNo" class="col-sm-3 control-label">Member's Mobile No *</label>
+	  		<div class="col-sm-9">
+	  			<input type="tel" class=" form-control" name ="mobileNo" placeholder="017x-xxxx-xxx">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="memberEmail" class="col-sm-3 control-label">Email Address </label>
+	  		<div class="col-sm-9">
+	  			<input type="email" class=" form-control" name ="memberEmail" placeholder="youradress@gmail.com">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="emergencyName" class="col-sm-3 control-label">Emergency Contact Name *</label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" name ="emergencyName" placeholder="Emran Tonmoy">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="emergencyMobileNo" class="col-sm-3 control-label">Emergency Mobile No *</label>
+	  		<div class="col-sm-9">
+	  			<input type="tel" class=" form-control" name ="emergencyMobileNo" placeholder="017x-xxxx-xxx">
+	  		</div>
+	  	</div>
+
+	  	
+	  	</div>
+	  	<div class="col-md-6">
+	  	
+	  	<h4>Package Selection</h4>
+	  	<div class="radio col-md-8" title="Package Selection">
+	  		<label>Package Selection</label>
+	  		<label>
+	  			<input type="radio" name="admissionType" id="regularPackage" value="regular" checked>
+	  			Regular Addmission(Monthly)
+	  		</label>
+	  		<label>
+	  			<input type="radio" name="admissionType" id="devotedPackage" value="devoted" >
+	  			Membership-Devoted(6 Months)
+	  		</label>
+	  		<label>
+	  			<input type="radio" name="admissionType" id="dedicatedPackage"  value="dedicated" >
+	  			Membership-Dedicated(12 Months)
+	  		</label>
+	  	</div>
+	  	<div class="form-group col-md-12">
+	  		<label for="memberStartDate" class="col-sm-3 control-label">Start Date *</label>
+	  		<div class="col-sm-9">
+	  			<input type="date" class=" form-control" id ="memberStartDate" >
+	  		</div>
+	  	</div>
+	  	
+	  	<div class="row">
+		  	
+		  	<div class="col-sm-3" id="formSubmit">
+		  		
+		  			<button href="/submitSuccess" type="submit" class="btn btn-success ">Save Member's Information</button>
+		  	</div>
+	  	</div>
+	  	
+	  	</div>
+  	</form>
+  	
+</template>
+
+<template name="formSubmitSuccess">
+	<div class="row">
+		
+	</div>
+	<div class="row">
+		<h1 id="formSubmit">Form Submitted Successfully</h1>
+	</div>
+	
+</template>
+
+<template name="newClassForm">
+	
+	<h3>Add new Gym Acitvity</h3>
+		<form>
+		  	<div class="form-group col-md-12 ">
+		  		<label for="className" class="control-label">Activity Name *</label>
+		  		
+		  			<input type="text" class=" form-control" name ="className" placeholder="Yoga" >
+		  		
+		  	</div>
+		  	<div class="form-group col-md-12">
+		  		<label for="activityType" class="control-label">For MemberShip Type *</label>
+		  		
+		  			<input type="text" class=" form-control" name ="activityType" placeholder="For Dedicated Members" >
+		  		
+		  	</div>
+		  	<div class="form-group col-md-12 ">
+		  		<label for="activitySeat" class=" control-label">Seat Limit *</label>
+		  		
+		  			<input title="Set the seat limit for the activity" type="number" class=" form-control" name ="activitySeat" placeholder="30">
+		  		
+		  	</div>
+		  	<div class="col-md-4">
+		  		<button href="/AddClass" type="submit" class="btn btn-success ">Save new Gym Activity Information</button>
+		  	</div>
+	  	</form>
+	  	
+</template>
+<template name="newInstructorForm">
+	<h3>Add new Instructor</h3>
+		<form>
+	  	<div class="form-group">
+	  		<label for="instructorName" class="col-sm-3 control-label">Instructor Name *</label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" name ="instructorName" placeholder="Arpa Khondokar">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="instructorAddress" class="col-sm-3 control-label">Address </label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" name ="instructorAddress" placeholder="56, dhanmondi">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="instructorPhone" class="col-sm-3 control-label">Phone No. *</label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" name ="instructorPhone" placeholder="01915601505">
+	  		</div>
+	  	</div>
+	  	<button href="/submitSuccess" type="submit" class="btn btn-success ">Save new Instructor Information</button>
+	  	</form>
+</template>
+<template name="newPeriodForm">
+	<h3>Add new Class Period</h3>
+		<form>
+	  	<div class="form-group">
+	  		<label for="subjectName" class="col-sm-3 control-label">Period Name *</label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" name ="subjectName" placeholder="1st Period">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="moduleName" class="col-sm-3 control-label">Start Time </label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" name ="moduleName" placeholder="8 AM">
+	  		</div>
+	  	</div>
+	  	<div class="form-group">
+	  		<label for="endTime" class="col-sm-3 control-label">End Time </label>
+	  		<div class="col-sm-9">
+	  			<input type="text" class=" form-control" name ="endTime" placeholder="8:45 AM">
+	  		</div>
+	  	</div>
+	  	<button href="/submitSuccess" type="submit" class="btn btn-success ">Save new Period Information</button>
+	  	</form>
+</template>

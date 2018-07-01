@@ -1,0 +1,119 @@
+<template name="routineTemplate">
+	<div class="col-md-10" >
+	<table  border="1" style="color:white; border-collapse: collapse; text-align: center;position: absolute;top-margin: 40%;margin-left: 10%;margin-right: 10% " >
+		<h3>CLASS ROUTINE:</h3>
+		<div >
+			<tr class="classroutine ">
+				<th class="row1" rowspan="1" colspan="1">Time</th>
+				{{#each getPeriod}}
+				<th class="row1" rowspan="1" colspan="1">{{periodName}}</th>
+				{{/each}}
+				<th  rowspan="2" colspan="1"> Breakk</th>
+
+			</tr>
+			<tr class="class">
+				<th rowspan="1" colspan="1">Day</th>
+				{{#each getPeriod}}
+				<th rowspan="1" colspan="1">{{startTime}}-{{endTime}}</th>
+				{{/each}}
+
+			</tr>
+			<tr class="class">
+				<th rowspan="4" colspan="1">Saturday</th>
+				{{#each  getClassRoutine "Saturday"}}
+				<td title="Click to select a slot" class="slot {{selctedSlot}}" rowspan="2" colspan="1">{{instructor_name}}</td>
+				{{/each}}
+
+
+			</tr>
+			<tr></tr>
+			<tr class="class">
+				
+
+			</tr>
+			<tr></tr>
+			<tr class="class">
+				<th rowspan="4" colspan="1">Sunday</th>
+				{{#each  getClassRoutine "Sunday"}}
+				<td title="Click to select a slot" class="slot {{selctedSlot}}" rowspan="2" colspan="1">{{instructor_name}}</td>
+				{{/each}}
+
+			</tr>
+
+			<tr></tr>
+
+			<tr class="class">
+				
+
+			</tr>
+
+			<tr></tr>
+
+			<tr class="class">
+				<th rowspan="4" colspan="1">Monday</th>
+				{{#each  getClassRoutine "Monday"}}
+				<td title="Click to select a slot" class="slot {{selctedSlot}}" rowspan="2" colspan="1">{{instructor_name}}</td>
+				{{/each}}
+				
+			</tr>
+
+			<tr></tr>
+
+			<tr class="class">
+				
+				
+			</tr>
+			<tr></tr>
+			<tr class="class">
+				<th rowspan="4" colspan="1">Tuesday</th>
+				{{#each  getClassRoutine "Tuesday"}}
+				<td title="Click to select a slot" class="slot {{selctedSlot}}" rowspan="2" colspan="1">{{instructor_name}}</td>
+				{{/each}}
+
+
+			</tr>
+			<tr></tr>
+			<tr class="class">
+				
+			</tr>
+			<tr></tr>
+			<tr class="class">
+
+				<th rowspan="4" colspan="1">Wednesday</th>
+				{{#each  getClassRoutine "Wednesday"}}
+				<td title="Click to select a slot" class="slot {{selctedSlot}}" rowspan="2" colspan="1">{{instructor_name}}</td>
+				{{/each}}
+
+
+			</tr>
+			<tr></tr>
+			<tr class="class" >
+				
+
+			</tr>
+			<tr></tr>
+			<tr class="class">
+
+				<th rowspan="4" colspan="1">Thursday</th>
+				{{#each  getClassRoutine "Thursday"}}
+				<td title="Click to select a slot" class="slot {{selctedSlot}}" rowspan="2" colspan="1">{{instructor_name}}</td>
+				{{/each}}
+
+
+			</tr>
+			<tr></tr>
+			<tr class="class" >
+				
+
+			</tr>
+
+		</div>
+	</table>
+	</div>
+	<div class="col-md-2">
+		<h3 class="h3-classSelected">Selected Slot: {{selectedSlotShow.day}}-{{selectedSlotShow.period_name}}-{{selectedSlotShow.instructor_name}}</h3>
+		<a class="btn btn-danger deleteSlot" href="/makeRoutine">Delete Selected Slot</a>
+	</div>
+	
+
+</template>

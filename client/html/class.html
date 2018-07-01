@@ -1,0 +1,141 @@
+<template  name="classView">
+	<div class="container-fluid">
+		<div class="col-md-10 col-xs-10">
+			<div class="row">
+				<h3>List of Activity</h3>
+				<div class="table-responsive">
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr>
+								<th>Activity Name</th>
+								<th>Seat Limit</th>
+								<th>Activity Type</th>
+								<th>Status</th>
+
+							</tr>		
+						</thead>
+						<tbody>
+							{{#each classList}}
+							<tr title="Click to select a Class">
+								<td class="class {{selectedClass}}">{{className}}</td>
+								<td class="class {{selectedClass}}">{{activitySeat}}</td>
+								<td class="class {{selectedClass}}">{{activityType}}</td>
+								<td class="class {{selectedClass}}">{{routineFlag}}</td>
+								
+							</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>
+				
+			</div>		
+		</div>
+		<div class="col-md-2 col-xs-2">
+		<h1>Schedule Routine</h1>
+		{{#each getClass}}
+			{{className}}:{{routineFlag}}
+		{{/each}}
+
+		<a class="btn btn-primary btn-active makeroutineBtn" role="button">Make New Routine
+		</a> 
+		<a href="/AddClass"  class="btn btn-info btn-active" role="button">Make GYM Acitvity
+		</a> 
+		<a href="/AddInstructor"  class="btn btn-warning btn-active" role="button">Add Instructor
+		</a> 
+		<a href="/AddPeriod"  class="btn btn-danger btn-active" role="button">Make Class Period
+		</a> 
+		</div>
+		
+	</div>
+	
+</template>
+<template name="makeroutine">
+	
+<form>
+	<div class="col-md-3">
+		<h1>Now Update your class routine </h1>
+		{{#each getClass}}
+		{{className}}:{{routineFlag}}
+		
+		{{/each}}
+		
+		<div class="form-group row">
+			<label for ="period">Select Class Periods</label>
+			<select  class="form-control form-control-routine" name="period">
+			{{#each getPeriod}}
+				<option value={{periodName}}>{{periodName}}- Start:{{startTime}} End:{{endTime}}</option>
+			{{/each}}
+			</select>
+		</div>
+		<div class="form-group row">
+			<label for="instructor">Select Instructor</label>
+			<select  class="form-control form-control-routine" name="instructor">
+			{{#each getInstructor}}
+				<option value={{subjectName}}>{{instructorName}}- {{instructorPhone}}</option>
+			{{/each}}
+			</select>
+		</div>
+		<div class="form-group row">
+			<label for="day">Select Day</label>
+			<select  class="form-control form-control-routine" name="day">
+			<option value="Saturday">Saturday</option>
+			<option value="Sunday">Sunday</option>
+			<option value="Monday">Monday</option>
+			<option value="Tuesday">Tuesday</option>
+			<option value="Wednesday">Wednesday</option>
+			<option value="Thursday">Thursday</option>
+			</select>
+		</div>
+		<div class="row">
+			<button class="btn btn-primary">
+				Add Period to Class 
+			</button>
+		</div>
+		<div class="row">
+			<a href="/routine" class="btn btn-success saveRoutine" role="button"> Save Activity Routine</a>
+		</div>
+	</div>
+</form>
+	<div class="col-md-9">
+		{{> routineTemplate}}
+	</div>
+	
+
+</template>
+<template name="addClass">
+	<div class="container">
+		<div class="col-md-4">
+			{{>newClassForm}}
+		</div>
+		<div class="col-md-6">
+			<table class="table table-stripped table-hover">
+				<thead>
+					<tr>
+						<th>Acitivity Name</th>
+						<th>Acitivity Type</th>
+						<th>Acitivity Seat</th>
+						<th>Acitivity Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each classList}}
+						<tr>
+							<td title="Click to select a Class" class="class {{selectedClass}}">{{className}}</td>
+							<td title="Click to select a Class" class="class {{selectedClass}}">{{activityType}}</td>
+							<td title="Click to select a Class" class="class {{selectedClass}}">{{activitySeat}}</td>
+							<td title="Click to select a Class" class="class {{selectedClass}}">{{routineFlag}}</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-2">
+			<h3>{{selectedClassShow.className}}</h3>
+			<a href="/AddClass" class="btn btn-danger btn-active deleteClass">Delete Activity</a>
+		</div>
+	</div>
+</template>
+
+<template name="addPeriod">
+	{{> newPeriodForm}}
+</template>

@@ -1,0 +1,13 @@
+.em{
+	max-width: 25%;
+	min-height: 10px;
+	padding-right: 15px;
+	padding-left: 15px;
+	color:#333333;
+	position: relative;
+	display: block;
+
+}
+.form-control-routine{
+	min-height: 20px;
+}
